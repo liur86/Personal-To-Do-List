@@ -1,0 +1,368 @@
+@charset "UTF-8";
+
+  body, input, button {
+    /*Set font family for all text*/
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /*Outer dark blue box*/
+  header {
+    /*Sets outer box dimensions*/
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    padding: 20px;
+
+    /*Sets distance from side of screen*/
+    top: 0;
+    left: 0;
+
+    /*Sets relative z position*/
+    z-index: 5;
+
+    /*Sets color of outer box*/
+    background: #255BBB;
+
+    /*Adds radius to bottom left and right of outer box*/
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    /*Removes box shadow*/
+    box-shadow: none;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  /*Inner light blue box*/
+  header input {
+    /*Sets inner box dimensions*/
+    width: 100%;
+    height: 60px;
+    float: left;
+
+    /*Sets color of inner box*/
+    background: #567BBB;
+
+    /*Adds radius to all corners of inner box*/
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 0;
+
+    /*Removes box shadow and outline of box*/
+    box-shadow: none;
+    outline: none;
+
+    /*Sets text details*/
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    text-indent: 20px;
+    padding-right: 80px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  header input::-webkit-input-placeholder {
+    /*Default text appearance in Chrome*/
+    color: #fff;
+    opacity: 0.75;
+  }
+
+  header input::-moz-placeholder {
+    /*Default text appearance in Firefox*/
+    color: #fff;
+    opacity: 0.75;
+  }
+
+  /*Add button*/
+  header button {
+    /*Sets dimensions and position of add button*/
+    width: 60px;
+    height: 60px;
+    position: absolute;
+
+    /*Sets distance from top and right side of screen*/
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+
+    /*Sets border radius*/
+    border-radius: 30px;
+    border: 0;
+
+    /*Removes box shadow and outline*/
+    box-shadow: none;
+    outline: none;
+
+    /*Changes cursor to a pointer when hovering over add button*/
+    cursor: pointer;
+
+    /*Sets background color of button*/
+    color: #fff;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  /*Plus symbol*/
+  header button svg {
+    /*Sets dimension of plus symbol*/
+    width: 20px;
+    height: 20px;
+    position: absolute;
+
+    /*Sets position of plus symbol*/
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+
+  header button svg .fill {
+    /*Sets color of plus button*/
+    fill: #255BBB;
+  }
+
+  body {
+    /*Sets background color of webpage*/
+    background: #C0C0C0;
+
+    padding-top: 100px;
+  }
+
+  /*Sets container class details*/
+  .container {
+    width: 100%;
+    float: left;
+    padding: 20px;
+  }
+
+  .noFill {
+    fill: none;
+  }
+
+  /*Sets unordered list details*/
+  ul.todo {
+    width: 100%;
+    float: left;
+  }
+
+  ul.todo li {
+    /*Sets list dimensions*/
+    width: 100%;
+    min-height: 60px;
+    float: left;
+    position: relative;
+
+    /*Sets styling of task box*/
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0;
+
+    /*Creates space between task boxes*/
+    margin-bottom: 15px;
+
+    /*Sets padding*/
+    padding-left: 20px;
+    padding-right: 180px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    /*Sets font details*/
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    line-height: 20px;
+    word-wrap: break-word;
+  }
+
+  /*Removes space underneath last task box*/
+  ul.todo li:last-child {
+    margin-bottom: 0;
+  }
+
+  ul.todo li .taskButtons {
+    /*Sets position of remove and finish buttons*/
+    width: 180px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  ul.todo li .taskButtons button {
+    /*Sets dimensions of individual remove and finish buttons*/
+    width: 60px;
+    height: 60px;
+    float: left;
+
+    /*Sets stylistic details of button*/
+    background: none;
+    border: 0;
+    box-shadow: none;
+    outline: none;
+
+    position: relative;
+
+    /*Changes cursor to pointer when hovering over button*/
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  /*Creates vertical line to separate finish and remove buttons*/
+  ul.todo li .taskButtons button:first-child::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background: #C0C0C0;
+  }
+
+  ul.todo li .taskButtons button:nth-child(2)::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background: #C0C0C0;
+  }
+
+  /*Sets dimension and position of remove and finish icons*/
+  ul.todo li .taskButtons button svg {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -15px 0 0 -15px;
+  }
+
+  /*Sets color of edit icon*/
+  ul.todo li .taskButtons button.edit svg .fill {
+    fill: #000;
+  }
+
+  /*Changes color of edit icon when hovered over*/
+  ul.todo li .taskButtons button.edit:hover svg .fill {
+    fill: #255BBB;
+  }
+
+  /*Sets color of remove icon*/
+  ul.todo li .taskButtons button.remove svg .fill {
+    fill: #C0C0C0;
+  }
+
+  /*Changes color of remove icon when hovered over*/
+  ul.todo li .taskButtons button.remove:hover svg .fill {
+    fill: #FF0000;
+  }
+
+  /*Creates circle around finish icon and sets color*/
+  ul.todo li .taskButtons button.finish svg {
+      border-radius: 15px;
+      border: 2px solid #255BBB;
+  }
+
+  /*Sets color of check mark in finish icon*/
+  ul.todo li .taskButtons button.finish svg .fill {
+    fill: #255BBB;
+  }
+
+  /*Inverts color of finish icon background when completed*/
+  ul.todo#finished li .taskButtons button.finish svg {
+    background: #255BBB;
+    border: 0px;
+  }
+
+  /*Inverts color of finish icon check mark when completed*/
+  ul.todo#finished li .taskButtons button.finish svg .fill {
+    fill: #fff;
+  }
+
+  /*Inverts color of unfinished finish icon background when hovered over*/
+  ul.todo#unfinished li .taskButtons button.finish:hover svg {
+    background: #255BBB;
+  }
+
+  /*Inverts color of unfinished finish icon check mark when hovered over*/
+  ul.todo#unfinished li .taskButtons button.finish:hover svg .fill {
+    fill: #fff;
+  }
+
+  /*Inverts color of finished finish icon background when hovered over*/
+  ul.todo#finished li .taskButtons button.finish:hover svg {
+    background: #fff;
+    border: 2px solid #255BBB;
+  }
+
+  /*Inverts color of finished finish icon check mark when hovered over*/
+  ul.todo#finished li .taskButtons button.finish:hover svg .fill {
+    fill: #255BBB;
+  }
+
+  /*Adds additional space between unfinished and finished tasks*/
+  ul.todo#finished {
+    padding-top: 60px;
+    position: relative;
+  }
+
+  /*Adds line break between finished and unfinished tasks*/
+  ul.todo#finished::before {
+    content: '';
+    width: 150px;
+    height: 1px;
+    background: #808080;
+    position: absolute;
+
+    top: 30px;
+    left: 50%;
+
+    margin-left: -75px;
+  }
+
+  /*Sets default text when there are no unfinished tasks*/
+  ul.todo#unfinished:empty::after {
+    content: 'You have nothing to do';
+    margin: 15px 0 0 0;
+  }
+
+  /*Sets default text when there are no finished tasks*/
+  ul.todo#finished:empty::after {
+    content: 'You have not completed any tasks';
+  }
+
+  /*Sets default text style when there are no unfinished tasks*/
+  ul.todo#unfinished::after {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: #808080;
+  }
+
+  /*Sets default text style when there are no finished tasks*/
+  ul.todo#finished::after {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: #808080;
+  }
+
+  footer {
+    /*Adds padding bottom of page*/
+    padding-bottom: 30px;
+  }
